@@ -7,10 +7,22 @@ apiEndpoints:
   # MS viorel
   auth-api:
     host: localhost
-    path: '/:json'
+    path: '/%7Brequest_tag:%22check_session_token%22,user_id:%22:ID%22,session_token:%:TOKEN%22%7D'
     prependPath:  false
     ignorePath:   true
   
+  signup:
+    host: localhost
+    paths: '/%7Brequest_tag:%22signup%22,email:%22:EMAIL%22,password:%22:PAROLA%22,first_name:%22:NUME%22,last_name:%22:PRENUME%22%7D'
+  login:
+    host: localhost
+    paths: '/%7Brequest_tag:%22login%22,email:%22:EMAIL%22,password:%22:PAROLA%22%7D'
+  logut:
+    host: localhost
+    paths: '/%7Brequest_tag:%22logout%22,user_id:%22:ID%22,session_token:%:TOKEN%22%7D'
+  check-session: 
+    host: localhost
+    paths: '/%7Brequest_tag:%22check_session_token%22,user_id:%22:ID%22,session_token:%:TOKEN%22%7D'
   # MS eduard
   all-tasks-api:
     host: localhost
@@ -97,6 +109,10 @@ pipelines:
   auth:
     apiEndpoints:
       - auth-api
+      - signup
+      - login
+      - logut
+      - check-session
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
     # - key-auth:
