@@ -67,8 +67,8 @@ serviceEndpoints:
   # MS viorel
   authEnd:
     urls: 
-      - 'http://localhost:8089'
-      - 'http://localhost:8089'
+      - 'http://18.220.57.109:8090'
+      - 'http://18.220.57.109:8090'
 
   # MS eduard
   tasksEnd:
