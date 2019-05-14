@@ -114,8 +114,11 @@ pipelines:
       - logut
       - check-session
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - cors:
+          - action:
+               origin: '*'
+               methods: 'HEAD,PUT,GET,PATCH,POST,DELETE'
+               allowedHeaders: 'X-TEST,Content-Type,Authorization'
       - proxy:
           - action:
               serviceEndpoint: authEnd 
@@ -125,8 +128,11 @@ pipelines:
       - all-tasks-api
       - assigner-api
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - cors:
+          - action:
+               origin: '*'
+               methods: 'HEAD,PUT,GET,PATCH,POST,DELETE'
+               allowedHeaders: 'X-TEST,Content-Type,Authorization'
       - proxy:
           - action:
               serviceEndpoint: tasksEnd 
@@ -140,8 +146,11 @@ pipelines:
       - delete-pref
       - add-pref
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - cors:
+          - action:
+               origin: '*'
+               methods: 'HEAD,PUT,GET,PATCH,POST,DELETE'
+               allowedHeaders: 'X-TEST,Content-Type,Authorization'
       - proxy:
           - action:
               serviceEndpoint: preferences 
@@ -154,8 +163,11 @@ pipelines:
       - remove-und
       - view
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - cors:
+          - action:
+               origin: '*'
+               methods: 'HEAD,PUT,GET,PATCH,POST,DELETE'
+               allowedHeaders: 'X-TEST,Content-Type,Authorization'
       - proxy:
           - action:
               serviceEndpoint: employees 
@@ -167,8 +179,11 @@ pipelines:
       - delete-profile
       - add-profile
     policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
+      - cors:
+          - action:
+               origin: '*'
+               methods: 'HEAD,PUT,GET,PATCH,POST,DELETE'
+               allowedHeaders: 'X-TEST,Content-Type,Authorization'
       - proxy:
           - action:
               serviceEndpoint: profile 
