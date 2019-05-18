@@ -58,7 +58,9 @@ apiEndpoints:
     host: localhost
     paths: '/add-profile/:userID/:nume/:prenume/:email/:parola/:data_inregistrare'
   
-
+  get-position:
+    host: localhost
+    paths: '/get-position/:userID'
   try:
     host: localhost
     paths: '/try-get/:idEmployee'  
@@ -162,6 +164,7 @@ pipelines:
       - change-sup
       - remove-und
       - view
+      - get-position
     policies:
       - cors:
           - action:
