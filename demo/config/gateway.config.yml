@@ -23,7 +23,6 @@ apiEndpoints:
   check-session: 
     host: localhost
     paths: '/%7Brequest_tag:%22check_session_token%22,user_id:%22:ID%22,session_token:%:TOKEN%22%7D'
-  
   # MS eduard
   all-tasks-api:
     host: localhost
@@ -31,12 +30,6 @@ apiEndpoints:
   assigner-api:
     host: localhost
     path: '/assigner'
-  task-id-api:
-    host: localhost
-    path: '/tasks/:id'
-  assigner-id-api:
-    host: localhost
-    path: '/assigner/:id'
 
   # MS cristi
   get-pref:
@@ -137,8 +130,6 @@ pipelines:
     apiEndpoints:
       - all-tasks-api
       - assigner-api
-      - task-id
-      - assigner-id-api
     policies:
       - cors:
           - action:
