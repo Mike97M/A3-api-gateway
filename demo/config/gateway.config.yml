@@ -87,6 +87,9 @@ apiEndpoints:
   get-position:
     host: localhost
     paths: '/get-position/:id'
+  change-position:
+    host: localhost
+    paths: '/change-position/:id/:position'
 
 serviceEndpoints:
   # MS viorel
@@ -178,6 +181,7 @@ pipelines:
       - remove-und
       - view
       - get-position
+      - change-position
     policies:
       - cors:
           - action:
